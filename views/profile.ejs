@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class=" bg-gradient-to-r from-cyan-500 to-blue-500">
+<section class="container">
+
+    <section class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </section>
+
+    <section class="row ">
+
+        <!-- LOCAL INFORMATION -->
+        <!-- <section class="col-sm-6">
+            <section class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </section>
+        </section> -->
+
+
+        <section class="text-center">
+            <h2>Add a order</h2>
+        </section>
+        <section class="text-center">
+         
+          <% if (user.local.email) { %>
+            <form action="/books" method="POST">
+              <label for="name">Name:</label>
+              <input  class="form-control form-control-sm text-center " type="text" value="<%= user.local.email %>" name="name" >
+  
+              <label for="book">Book</label>
+              <input  class="form-control form-control-sm text-center " type="text" placeholder="enter manga here" name="bookName" >
+               
+  
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <% } %>
+  
+        </section>
+        <section class="card style="width: 18rem background: blue ">
+          <section class="">
+            <h3>All Manga </h3>
+            <ul class="books">
+            <% for(var i=0; i<books.length; i++) {%>
+                <li class="order">
+                  <span><%= books[i].name %></span>
+                  <span><%= books[i].bookName %></span>
+                  <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                </li>
+            <% } %>
+            </ul>
+          </section>
+          <section class="flex flex-row">
+            <h3>Currently reading...</h3>
+            <ul class="books">
+            <% for(var i=0; i<books.length; i++) {%>
+              <% if (books[i].status !== "Finished Reading") {%>
+                <li class="order">
+                  <span><%= books[i].name %></span>
+                  <span><%= books[i].bookName %></span>
+                  <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                </li>
+              <% } %>
+            <% } %>
+            </ul>
+          </section>
+          <section class="flex flex-row">
+            <h3>Completed Manga</h3>
+            <ul class="books">
+              <% for(var i=0; i<books.length; i++) {%>
+                <% if (books[i].status === "Finished Reading") {%>
+                  <li class="order">
+                    <span><%= books[i].name %></span>
+                    <span class="checked"><%= books[i].bookName %></span>
+                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                    <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                  </li>
+                <% } %>
+              <% } %>
+            </ul>
+          </section>
+          
+          
+      
+       
+</section>
+
+<script src="main.js"></script>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</body>
+</html>
