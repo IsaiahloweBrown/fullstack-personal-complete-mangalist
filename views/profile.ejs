@@ -6,12 +6,32 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class=" bg-gradient-to-r from-cyan-500 to-blue-500">
+<body class="">
 <section class="container">
 
     <section class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <!-- <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
+        <section class="text-center">
+          <h2>Add a Manga</h2>
+      </section>
+      <section class="text-center">
+       
+        <% if (user.local.email) { %>
+          <form action="/books" method="POST">
+            <label for="name">Name:</label>
+            <input  class="form-control form-control-sm text-center " type="text" value="<%= user.local.email %>" name="name" >
+
+            <label for="book">Book</label>
+            <input  class="form-control form-control-sm text-center " type="text" placeholder="enter manga here" name="bookName" >
+             
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+      </section>
     </section>
 
     <section class="row ">
@@ -37,27 +57,8 @@
         </section> -->
 
 
+       
         <section class="text-center">
-            <h2>Add a order</h2>
-        </section>
-        <section class="text-center">
-         
-          <% if (user.local.email) { %>
-            <form action="/books" method="POST">
-              <label for="name">Name:</label>
-              <input  class="form-control form-control-sm text-center " type="text" value="<%= user.local.email %>" name="name" >
-  
-              <label for="book">Book</label>
-              <input  class="form-control form-control-sm text-center " type="text" placeholder="enter manga here" name="bookName" >
-               
-  
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-          <% } %>
-  
-        </section>
-        <section class="card style="width: 18rem background: blue ">
           <section class="">
             <h3>All Manga </h3>
             <ul class="books">

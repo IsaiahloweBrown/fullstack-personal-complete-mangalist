@@ -1,6 +1,14 @@
 body{
   padding-top:80px;
   word-wrap:break-word;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
+  ), url("./img/samurai-champloo-anime-hd-wallpaper-1920x1080-37186.jpg");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 img{
   height: 200px;
@@ -9,4 +17,14 @@ img{
 .checked {
   color: gray;
   text-decoration: line-through;
+}
+
+
+.books {
+  color: white;
+
+}
+
+h1, h2, h3, h4 {
+  color: white;
 }
