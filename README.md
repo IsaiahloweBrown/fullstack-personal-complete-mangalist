@@ -1,13 +1,6 @@
-## Installation
+## Mangalist
 
-1. Clone repo
-2. run `npm install`
+![image](https://user-images.githubusercontent.com/112201564/201458077-5f00590c-0dd5-4379-a04c-1d7a2979037a.png)
 
-## Usage
+Will Update Soon
 
-1. run `node server.js`
-2. Navigate to `localhost:8080`
-
-## Credit
-
-Modified from Scotch.io's auth tutorial
